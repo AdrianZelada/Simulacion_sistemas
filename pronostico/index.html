@@ -2,14 +2,18 @@
 <html>
 <head>
 	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div>
+<div class="content_xy">
 	<p> x: </p>
 	<input type="text" id='x'>
 	<p> y: </p>
 	<input type="text" id='y'>
-	<button id="boton">Plus</button>
+	<br	>
+	<div id="boton">
+		<img src="plus.png">
+	</div>
 	<div id="content" ></div>
 </div>
 
@@ -53,7 +57,10 @@ pronostico.onclick=function(){
 	var deno=Sum_cuadr('_x')-((Sum_x*Sum_x)/n);
 	var num=Sum_multi()-((Sum_x*Sum_y)/n);
 
-	var B = num/deno;
+
+	console.log(Sum_x*Sum_y);
+
+	/*var B = num/deno;
 	var A = Prome_y - ( B * Prome_x );
 
 	console.log(Prome_x);
@@ -67,7 +74,7 @@ pronostico.onclick=function(){
 	console.log(deno);
 	console.log(B);
 	console.log(A);
-	console.log(A+B);
+	console.log(A+B);*/
 }
 
 function promedio_sum(){

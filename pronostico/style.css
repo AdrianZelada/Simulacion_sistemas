@@ -1,0 +1,42 @@
+.content_xy{
+	width: 200px;
+	height: 300px;
+	padding-left: 20px;
+	border-radius: 10px;
+	background: rgb(129, 207, 224);
+}
+.content_xy > input{
+	width: 150px;
+	height: 30px;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+.content_xy > p{	
+	font-size: 20px;
+	margin-bottom: 5px !important;
+	margin-top: 5px !important;
+}
+#boton{
+	margin-top: 20px;
+	width: 50px;
+	height: 50px;
+	padding-left: 0px !important;
+
+	 -webkit-transition:all 1s ease;
+   -moz-transition:all 1s ease;
+   -o-transition:all 1s ease;
+   transition:all 1s ease;
+
+}
+#boton:hover{
+	background: red;
+	border-radius: 20px;
+	background: rgb(228, 241, 254);
+}
+#boton > img{
+	width: 50px;
+	height: 50px;
+	margin-right:0px !important;
+	margin-left: -2px;
+}
