@@ -5,24 +5,26 @@
 	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-<div class="content_xy">
-	<p> x: </p>
-	<input type="text" id='x'>
-	<p> y: </p>
-	<input type="text" id='y'>
-	<br	>
-	<div id="boton">
-		<img src="plus.png">
+<div id="content_master">
+	<div id="content_xy" class="content_xy">
+		<p> x: </p>
+		<input type="text" id='x'>
+		<p> y: </p>
+		<input type="text" id='y'>
+		<br	>
+		<div id="boton">
+			<img src="plus.png">
+		</div>
+		<div id="content" ></div>
 	</div>
-	<div id="content" ></div>
-</div>
 
-<div>
-	<p>Periodo</p>
-	<input type="text" id='n'>
-	<button id="pronostico">pronostico</button>
+	<div id="content_pronos">
+		<p>Periodo</p>
+		<input type="text" id='n'>
+		<div id="pronostico">pronostico</div>
 
-	<div id="resultado"></div>
+		<div id="resultado"></div>
+	</div>
 </div>
 
 <script type="text/javascript">
@@ -31,9 +33,11 @@
 	var Sum_y;
 	var Prome_x;
 	var Prome_y;
+	var count_cord=0;
 	
 	var buton=document.getElementById('boton');
 buton.onclick=function(){
+	count_cord++;
 	var x=parseInt(document.getElementById('x').value);
 	var y=parseInt(document.getElementById('y').value);
 	cordenadas.push(
@@ -42,8 +46,15 @@ buton.onclick=function(){
 			_y:y
 		}
 	);
-	var content=document.getElementById('content');
-	content.innerHTML=content.innerHTML+" <br /> "+"x ="+x +"................ y ="+y;
+	var content=document.getElementById('content');	
+
+	content.innerHTML=content.innerHTML+" <br /> "+"x = <input type='text' id='x"+count_cord+"' value='"+x+"' class='Input_xy'/> y = <input type='text' id='y"+count_cord+"' value='"+y+"' class='Input_xy'/>" ;
+	var content_xy=document.getElementById('content_xy');
+	content_xy.style.height=content_xy.offsetHeight+40+'px';
+	content_master=document.getElementById('content_master');
+	if(content_xy.offsetHeight>550){
+		content_master.style.height=content_master.offsetHeight+40+'px';
+	}
 }
 
 var pronostico=document.getElementById('pronostico');
