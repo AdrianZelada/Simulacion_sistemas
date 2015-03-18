@@ -23,7 +23,9 @@
 		<input type="text" id='n'>
 		<div id="pronostico">pronostico</div>
 
-		<div id="resultado"></div>
+		<div id="content_resultado">
+			<p id="resultado"></p>
+		</div>
 	</div>
 </div>
 
@@ -36,16 +38,13 @@
 	var count_cord=0;
 	
 	var buton=document.getElementById('boton');
+
+
 buton.onclick=function(){
 	count_cord++;
-	var x=parseInt(document.getElementById('x').value);
-	var y=parseInt(document.getElementById('y').value);
-	cordenadas.push(
-		{
-			_x:x,
-			_y:y
-		}
-	);
+	var x=parseInt(document.getElementById('x').value) ? parseInt(document.getElementById('x').value) : "";
+	var y=parseInt(document.getElementById('y').value) ? parseInt(document.getElementById('y').value) : "";
+
 	var content=document.getElementById('content');	
 
 	content.innerHTML=content.innerHTML+" <br /> "+"x = <input type='text' id='x"+count_cord+"' value='"+x+"' class='Input_xy'/> y = <input type='text' id='y"+count_cord+"' value='"+y+"' class='Input_xy'/>" ;
@@ -55,37 +54,30 @@ buton.onclick=function(){
 	if(content_xy.offsetHeight>550){
 		content_master.style.height=content_master.offsetHeight+40+'px';
 	}
+	document.getElementById('x').value="";
+	document.getElementById('y').value="";
 }
 
 var pronostico=document.getElementById('pronostico');
 
 pronostico.onclick=function(){
-
-	var n=parseInt(document.getElementById('n').value);
-
-	promedio_sum();	
-
-	var deno=Sum_cuadr('_x')-((Sum_x*Sum_x)/n);
-	var num=Sum_multi()-((Sum_x*Sum_y)/n);
-
-
-	console.log(Sum_x*Sum_y);
-
-	/*var B = num/deno;
-	var A = Prome_y - ( B * Prome_x );
-
-	console.log(Prome_x);
-	console.log(Prome_y);
-	console.log(Sum_x);
-	console.log(Sum_y);
-	console.log(cordenadas.length);
-	console.log(Sum_multi());
-	console.log(Sum_cuadr('_x'));
-	console.log(num);
-	console.log(deno);
-	console.log(B);
-	console.log(A);
-	console.log(A+B);*/
+	if(parseInt(document.getElementById('n').value)>=0){
+		var n=parseInt(document.getElementById('n').value);
+		var content=document.getElementById('content');
+		for(i=1;i<=count_cord;i++){
+			cordenadas.push(
+				{
+					_x:parseInt(document.getElementById('x'+i).value),
+					_y:parseInt(document.getElementById('y'+i).value)
+				}
+			);		
+		}	
+		promedio_sum();	
+		var deno=Sum_cuadr('_x')-((Sum_x*Sum_x)/n);
+		var num=Sum_multi()-((Sum_x*Sum_y)/n);
+		console.log(Sum_multi()-(Sum_x*Sum_y)/n);
+		console.log(Sum_cuadr('_x')-((Sum_x*Sum_x)/n));
+	}	
 }
 
 function promedio_sum(){

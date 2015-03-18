@@ -99,3 +99,12 @@
 	font-size: 20px;
 	margin-bottom: 10px;
 }
+#content_resultado{
+	width: 95%;
+	margin: 0 auto;
+}
+#resultado{
+	color: white;
+	font-size: 35px;
+	text-align: center;
+}
