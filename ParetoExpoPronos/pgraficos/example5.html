@@ -1,0 +1,30 @@
+<html>
+<head>
+<title>HTML-Graphs Example</title>
+<script type="text/javascript" src="graphs.js"></script>
+<script type="text/javascript"> 
+graph = new BAR_GRAPH("hBar");
+graph.values = "123,456,789,987,654,321";
+graph.labels = "Caballos,Perros,Gatos,Aves,Chanchitos,Vacas";
+graph.showValues = 1;
+graph.barWidth = 20;
+graph.barLength = 1;
+graph.labelSize = 12;
+graph.absValuesSize = 12;
+graph.percValuesSize = 12;
+graph.graphPadding = 10;
+graph.graphBGColor = "#ABCDEF";
+graph.graphBorder = "1px solid blue";
+graph.barColors = "#A0C0F0";
+graph.barBGColor = "#E0F0FF";
+graph.barBorder = "2px outset white";
+graph.labelColor = "#000000";
+graph.labelBGColor = "#C0E0FF";
+graph.labelBorder = "2px groove white";
+graph.absValuesColor = "#000000";
+graph.absValuesBGColor = "#FFFFFF";
+graph.absValuesBorder = "2px groove white";
+document.write(graph.create());
+</script>
+</body>
+</html>

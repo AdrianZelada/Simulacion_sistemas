@@ -24,7 +24,7 @@
 		<div id="pronostico">pronostico</div>
 
 		<div id="content_resultado">
-			<p id="resultado"></p>
+			<p id="resultado">asdasd</p>
 		</div>
 	</div>
 </div>
@@ -77,6 +77,17 @@ pronostico.onclick=function(){
 		var num=Sum_multi()-((Sum_x*Sum_y)/n);
 		console.log(Sum_multi()-(Sum_x*Sum_y)/n);
 		console.log(Sum_cuadr('_x')-((Sum_x*Sum_x)/n));
+
+		var B=(Sum_multi()-(Sum_x*Sum_y)/n)/(Sum_cuadr('_x')-((Sum_x*Sum_x)/n));
+		console.log(B);
+		var A=Prome_y+(B*Prome_x);
+
+		var Result=A+ (B*n);
+		console.log(Result);
+
+		cordenadas=[];
+
+		document.getElementById('resultado').textContent=Result;
 	}	
 }
 

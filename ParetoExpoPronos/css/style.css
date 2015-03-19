@@ -1,0 +1,9 @@
+.block{
+	position: relative;
+	float: left;
+	width: 100px;
+	height: 30px;
+	background: rgb(104, 195, 163);
+	margin: 2px;
+	text-align: center;
+}
