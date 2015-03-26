@@ -73,14 +73,14 @@ pronostico.onclick=function(){
 			);		
 		}	
 		promedio_sum();	
-		var deno=Sum_cuadr('_x')-((Sum_x*Sum_x)/n);
-		var num=Sum_multi()-((Sum_x*Sum_y)/n);
-		console.log(Sum_multi()-(Sum_x*Sum_y)/n);
-		console.log(Sum_cuadr('_x')-((Sum_x*Sum_x)/n));
+		// var deno=Sum_cuadr('_x')-((Sum_x*Sum_x)/cordenadas.length);
+		// var num=Sum_multi()-((Sum_x*Sum_y)/cordenadas.length);
+		// console.log(Sum_multi()-(Sum_x*Sum_y)/cordenadas.length);
+		// console.log(Sum_cuadr('_x')-((Sum_x*Sum_x)/cordenadas.length));
 
-		var B=(Sum_multi()-(Sum_x*Sum_y)/n)/(Sum_cuadr('_x')-((Sum_x*Sum_x)/n));
+		var B=(Sum_multi()-(Sum_x*Sum_y)/cordenadas.length)/(Sum_cuadr('_x')-((Sum_x*Sum_x)/cordenadas.length));
 		console.log(B);
-		var A=Prome_y+(B*Prome_x);
+		var A=Prome_y-(B*Prome_x);
 
 		var Result=A+ (B*n);
 		console.log(Result);
